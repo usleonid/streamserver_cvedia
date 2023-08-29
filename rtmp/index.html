@@ -10,7 +10,7 @@
   </head>
   <body>
     <h2>Live Stream</h2>
-    <div id="player"></div>
+    <!-- <div id="player"></div>
     <script>
       var player = new Clappr.Player({
         source: "/hls/streaming.m3u8", 
@@ -24,12 +24,12 @@
           MediaControl.TimeIndicatorPlugin,
         ]
       });
-    </script>
-    <!-- <video id="video" width="800" controls></video>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> -->
+    </script> -->
+    <video id="video" width="800" controls></video>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <!-- Or if you want a more recent alpha version -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-    <!-- <script>
+    <script>
       var video = document.getElementById("video");
       var videoSrc = "/hls/streaming.m3u8";
       if (Hls.isSupported()) {
@@ -53,6 +53,6 @@
       else if (video.canPlayType("application/vnd.apple.mpegurl")) {
         video.src = videoSrc;
       }
-    </script> -->
+    </script>
   </body>
 </html>

@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  rtmp:
+    build: ./rtmp
+    ports:
+     - "1935:1935"
+    #  - "443:443"
+     - "8088:8088"
+    container_name: rtmp_server
+    volumes:
+      - ./data:/tmp/hls
+
+  # auth:
+  #   build: ./auth
+  #   container_name: auth_server
+
+  # cvedia-rt:
+  #   build:
+  #     context: ./cvedia-rt
+  #   container_name: cvedia_rt_instance
+  #   ports:
+  #     - "8080:8080"
+  #   # volumes:
+  #   #   - /var/run/docker.sock:/var/run/docker.sock
+
+  # emqx:
+  #   image: emqx/emqx:latest # Official EMQX Docker image
+  #   container_name: emqx_server
+  #   ports:
+  #     - "1883:1883" # Expose MQTT port
+  #     - "8083:8083" # Expose WebSocket port
+  #     - "8084:8084"
+  #     - "18083:18083"
+  #   volumes:
+  #     - ./emqx_data:/opt/emqx/data # Mount a volume for EMQX data

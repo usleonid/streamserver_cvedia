@@ -4,15 +4,15 @@ services:
     build: ./rtmp
     ports:
      - "1935:1935"
-    #  - "443:443"
+     - "443:443"
      - "8088:8088"
     container_name: rtmp_server
     volumes:
       - ./data:/tmp/hls
 
-  # auth:
-  #   build: ./auth
-  #   container_name: auth_server
+  auth:
+    build: ./auth
+    container_name: auth_server
 
   # cvedia-rt:
   #   build:

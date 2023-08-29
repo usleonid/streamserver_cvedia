@@ -5,13 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@joaopaulo.vieira/clappr-media-control-plugin@latest/dist/clappr-media-control-plugin.min.js"></script>
     <title>Live Stream</title>
   </head>
   <body>
     <h2>Live Stream</h2>
     <div id="player"></div>
     <script>
-      var player = new Clappr.Player({source: "/hls/streaming.m3u8", parentId: "#player"});
+      var player = new Clappr.Player({
+        source: "/hls/streaming.m3u8", 
+        parentId: "#player",
+        plugins: [
+          MediaControl.MainPlugin,
+          MediaControl.PlayPauseButtonPlugin,
+          MediaControl.VolumePlugin,
+          MediaControl.FullscreenButtonPlugin,
+          MediaControl.SeekBarPlugin,
+          MediaControl.TimeIndicatorPlugin,
+        ]
+      });
     </script>
     <!-- <video id="video" width="800" controls></video>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> -->

@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
     <title>Live Stream</title>
   </head>
   <body>
     <h2>Live Stream</h2>
-    <video id="video" width="800" controls></video>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <div id="player"></div>
+    <script>
+      var player = new Clappr.Player({source: "http://your.video/here.mp4", parentId: "#player"});
+    </script>
+    <!-- <video id="video" width="800" controls></video>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> -->
     <!-- Or if you want a more recent alpha version -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
-    <script>
+    <!-- <script>
       var video = document.getElementById("video");
       var videoSrc = "/hls/streaming.m3u8";
       if (Hls.isSupported()) {
@@ -36,6 +41,6 @@
       else if (video.canPlayType("application/vnd.apple.mpegurl")) {
         video.src = videoSrc;
       }
-    </script>
+    </script> -->
   </body>
 </html>
